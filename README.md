@@ -13,6 +13,10 @@ To install Node.js is required. Simply run "npm install" in root Folder and all 
 To Develope use "npm run serve" to set up a simple Dev Server.
 To build run "npm run build". Prepared files should end up in ./dist Folder.
 
+## TODO
+
+Further Investigate Syntaxerror in ./src/ts/App.tsx
+
 ## Authors and acknowledgment
 
 Main Author Christopher Schmitz (https://gitlab.com/s4l1/).
