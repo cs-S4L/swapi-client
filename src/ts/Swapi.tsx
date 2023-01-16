@@ -7,6 +7,7 @@ class SwapiClass {
         this.baseUrl = "https://swapi.dev/api/";
     }
 
+    //TODO Replace String with Type Endpoint here
     getEndpointUrl(endpoint: string) {
         switch(endpoint) { 
             case 'people':{
