@@ -22,7 +22,7 @@ export class PeopleInfo extends React.Component<IPeopleInfoProps, IPeopleInfoSta
         super(props);
         this.state = {
             resp : {}
-        }
+        };
     }
 
     componentDidMount() {
@@ -30,7 +30,7 @@ export class PeopleInfo extends React.Component<IPeopleInfoProps, IPeopleInfoSta
     }
 
     componentDidUpdate(prevProps) {
-        if(prevProps.changedProp !== this.props.id){
+        if (prevProps.changedProp !== this.props.id) {
             this.getResponse();
         }
     }

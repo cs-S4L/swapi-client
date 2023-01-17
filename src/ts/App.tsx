@@ -7,5 +7,5 @@ export const App = () => {
       <h1>Star Wars People Database</h1>
       <People/>
     </>
-  )
+  );
 };

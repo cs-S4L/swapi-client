@@ -13,7 +13,7 @@ class SwapiClass {
             case 'people':{
                 return `${this.baseUrl}people`;
             }
-        }
+        };
     }
 
     async getPeopleById(id : number) {

@@ -5,7 +5,7 @@ import { Swapi } from '../class/Swapi';
 type ISuggestionList = {
     name: string,
     id: number
-}
+};
 
 interface IPeopleProps {};
   
@@ -23,7 +23,7 @@ export class People extends React.Component<IPeopleProps, IPeopleState> {
         this.state = {
             suggestions: [],
             peopleInfo: undefined
-        }
+        };
     }
 
     onChangeInput = (e) =>  {
@@ -60,6 +60,6 @@ export class People extends React.Component<IPeopleProps, IPeopleState> {
                 </ul>
                 <PeopleInfo id={ this.state.peopleInfo }/>
             </div>
-        )
+        );
     }
 }

@@ -7,13 +7,6 @@ body {
     color: $white;
 }
 
-#root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 h1 {
     color: $yellow;
     text-shadow: -1px -1px 0 rgb(0 0 0 / 30%);
@@ -42,4 +35,11 @@ li {
 
 .peopleInfo {
     margin-top: 25px;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
