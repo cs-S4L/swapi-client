@@ -30,7 +30,7 @@ export class PeopleInfo extends React.Component<IPeopleInfoProps, IPeopleInfoSta
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.changedProp !== this.props.id) {
+        if (prevProps.id !== this.props.id) {
             this.getResponse();
         }
     }
@@ -44,7 +44,7 @@ export class PeopleInfo extends React.Component<IPeopleInfoProps, IPeopleInfoSta
 
     render() {
         return (
-            <div className="peopleInfo">
+            <div className={ `peopleInfo ${(this.state?.resp?.name) ? '': 'hide'}` }>
                 <p>
                     Name: { this.state?.resp?.name }
                 </p>

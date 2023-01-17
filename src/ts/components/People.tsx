@@ -29,7 +29,10 @@ export class People extends React.Component<IPeopleProps, IPeopleState> {
     onChangeInput = (e) =>  {
         if (this.inputTimeout) clearTimeout(this.inputTimeout);
         this.inputTimeout = setTimeout(() => {
-            if (!e.target.value) return;
+            if (!e.target.value) {
+                this.setState({ suggestions: [] });
+                return;
+            }
             Swapi.searchPeople(e.target.value).then((response) => {
                 if (!response.data) return;
                 const names = response.data.results.map((arr) => {
@@ -55,10 +58,13 @@ export class People extends React.Component<IPeopleProps, IPeopleState> {
             <div>
                 <label htmlFor="search">Search our Star Wars People Database</label>
                 <input id="search" type="search" name="search" onChange={this.onChangeInput}/>
-                <ul>
-                    { suggestionList }
-                </ul>
-                <PeopleInfo id={ this.state.peopleInfo }/>
+                
+                { this.state.suggestions &&
+                    <ul>
+                        { suggestionList }
+                    </ul>
+                }
+                <PeopleInfo id={ this.state.peopleInfo } />
             </div>
         );
     }
