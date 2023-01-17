@@ -44,7 +44,7 @@ export class PeopleInfo extends React.Component<IPeopleInfoProps, IPeopleInfoSta
 
     render() {
         return (
-            <div class="peopleInfo">
+            <div className="peopleInfo">
                 <p>
                     Name: { this.state?.resp?.name }
                 </p>

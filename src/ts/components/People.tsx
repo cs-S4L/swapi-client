@@ -2,10 +2,15 @@ import React from 'react';
 import { PeopleInfo } from './PeopleInfo';
 import { Swapi } from '../class/Swapi';
 
+type ISuggestionList = {
+    name: string,
+    id: number
+}
+
 interface IPeopleProps {};
   
 interface IPeopleState {
-    suggestions?: Array<Object>,
+    suggestions?: Array<ISuggestionList>,
     peopleInfo?: number
 };
 
@@ -42,13 +47,13 @@ export class People extends React.Component<IPeopleProps, IPeopleState> {
 
     render() {
         const suggestionList = this.state.suggestions?.map((item, test) =>
-            <li key={item.id.toString()} id={item.id} onClick={this.clickSuggestion}>
+            <li key={item.id.toString()} id={ String(item.id) } onClick={this.clickSuggestion}>
                 { item.name }
             </li>
         );
         return (
             <div>
-                <label for="search">Search our Star Wars People Database</label>
+                <label htmlFor="search">Search our Star Wars People Database</label>
                 <input id="search" type="search" name="search" onChange={this.onChangeInput}/>
                 <ul>
                     { suggestionList }
