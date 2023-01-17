@@ -2,7 +2,7 @@ import React from 'react';
 import { PeopleInfo } from './PeopleInfo';
 import { Swapi } from '../class/Swapi';
 
-type ISuggestionList = {
+type SuggestionListType = {
     name: string,
     id: number
 };
@@ -10,7 +10,7 @@ type ISuggestionList = {
 interface IPeopleProps {};
   
 interface IPeopleState {
-    suggestions?: Array<ISuggestionList>,
+    suggestions?: Array<SuggestionListType>,
     peopleInfo?: number
 };
 
