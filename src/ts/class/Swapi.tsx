@@ -1,6 +1,6 @@
 const axios = require('axios').default;
 
-type EndpointType = 'people';
+type EndpointType = 'people'; //Add further Enpoints here
 
 class SwapiClass {
     baseUrl: string;

@@ -6,7 +6,7 @@ interface IPeopleInfoProps {
 };
   
 interface IPeopleInfoState {
-    resp?: {
+    data?: {
         name?: string,
         height?: number,
         mass?: number,
@@ -21,47 +21,47 @@ export class PeopleInfo extends React.Component<IPeopleInfoProps, IPeopleInfoSta
     constructor(props) {
         super(props);
         this.state = {
-            resp : {}
+            data : {}
         };
     }
 
     componentDidMount() {
-        this.getResponse();
+        this.getData();
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.id !== this.props.id) {
-            this.getResponse();
+            this.getData();
         }
     }
 
-    getResponse() {
+    getData() {
         if (!this.props.id) return;
         Swapi.getPeopleById(this.props.id).then((response) => {
-            this.setState({ resp : response.data });
+            this.setState({ data : response.data });
         });
     }
 
     render() {
         return (
-            <div className={ `peopleInfo ${(this.state?.resp?.name) ? '': 'hide'}` }>
+            <div className={ `peopleInfo ${(this.state?.data?.name) ? '': 'hide'}` }>
                 <p>
-                    Name: { this.state?.resp?.name }
+                    Name: { this.state?.data?.name }
                 </p>
                 <p>
-                    Height: { this.state?.resp?.height }
+                    Height: { this.state?.data?.height }
                 </p>
                 <p>
-                    Mass: { this.state?.resp?.mass }
+                    Mass: { this.state?.data?.mass }
                 </p>
                 <p>
-                    Hair Color: { this.state?.resp?.hair_color }
+                    Hair Color: { this.state?.data?.hair_color }
                 </p>
                 <p>
-                    Skin Color: { this.state?.resp?.skin_color }
+                    Skin Color: { this.state?.data?.skin_color }
                 </p>
                 <p>
-                    Eye Color: { this.state?.resp?.eye_color }
+                    Eye Color: { this.state?.data?.eye_color }
                 </p>
             </div>
         );
