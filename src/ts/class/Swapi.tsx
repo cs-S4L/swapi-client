@@ -19,6 +19,10 @@ class SwapiClass {
     async getPeopleById(id : number) {
         return axios.get(`${this.getEndpointUrl('people')}/${id}`);
     }
+
+    async searchPeople(searchString: string) {
+        return axios.get(`${this.getEndpointUrl('people')}/?search=${searchString}`);
+    }
 }
 
 export const Swapi = new SwapiClass();

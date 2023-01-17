@@ -1,0 +1,45 @@
+$yellow: #FFE300;
+$black: #111111;
+$white: #EEEEEE;
+
+body {
+    background-color: $black;
+    color: $white;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1 {
+    color: $yellow;
+    text-shadow: -1px -1px 0 rgb(0 0 0 / 30%);
+    text-align: center;
+    width: 100%;
+}
+
+label {
+    display: block;
+}
+
+ul {
+    margin-top: 0;
+    padding-inline-start: 10px;
+}
+
+li {
+    list-style: none;
+    padding: 10px 0;
+    border: 1px solid $black;
+
+    &:hover {
+        border-color: $yellow;
+    }
+}
+
+.peopleInfo {
+    margin-top: 25px;
+}

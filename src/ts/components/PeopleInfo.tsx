@@ -1,9 +1,8 @@
 import React from "react";
-import { Swapi } from "./Swapi";
-const axios = require('axios').default;
+import { Swapi } from "../class/Swapi";
 
 interface IPeopleInfoProps {
-    id: number;
+    id?: number;
 };
   
 interface IPeopleInfoState {
@@ -27,15 +26,25 @@ export class PeopleInfo extends React.Component<IPeopleInfoProps, IPeopleInfoSta
     }
 
     componentDidMount() {
+        this.getResponse();
+    }
+
+    componentDidUpdate(prevProps) {
+        if(prevProps.changedProp !== this.props.id){
+            this.getResponse();
+        }
+    }
+
+    getResponse() {
+        if (!this.props.id) return;
         Swapi.getPeopleById(this.props.id).then((response) => {
-            console.log('response', response.data);
-            this.setState({resp : response.data});
+            this.setState({ resp : response.data });
         });
     }
 
     render() {
         return (
-            <div>
+            <div class="peopleInfo">
                 <p>
                     Name: { this.state?.resp?.name }
                 </p>

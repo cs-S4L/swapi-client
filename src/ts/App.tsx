@@ -1,11 +1,11 @@
 import React from 'react';
-import { PeopleInfo } from './PeopleInfo';
+import { People } from './components/People';
 
 export const App = () => {
   return (
     <>
-      <h3>Star Wars People Database</h3>
-      <PeopleInfo id="2"/>
+      <h1>Star Wars People Database</h1>
+      <People/>
     </>
   )
 };
